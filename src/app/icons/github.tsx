@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const GithubIcon: React.FC = () => (
   <svg
@@ -20,6 +20,6 @@ const GithubIcon: React.FC = () => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default GithubIcon
+export default GithubIcon;

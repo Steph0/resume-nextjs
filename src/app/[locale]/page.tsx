@@ -1,8 +1,8 @@
-import { useTranslations } from 'next-intl'
-import Button from './components/Button'
+import { useTranslations } from 'next-intl';
+import Button from './components/Button';
 
 export default function DashboardPage() {
-  const t = useTranslations('')
+  const t = useTranslations('');
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-24'>
@@ -16,14 +16,11 @@ export default function DashboardPage() {
         </h1>
         <div className='my-6 px-20 text-center text-2xl text-text-secondary'>
           {t(
-            'An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications'
+            'An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications',
           )}
         </div>
         <div className='mt-4 flex flex-row gap-4'>
-          <a
-            href='https://github.com/Steph0/'
-            target='_blank'
-          >
+          <a href='https://github.com/Steph0/' target='_blank'>
             <Button rounded size='large'>
               {t('Github_portfolio_btn')}
             </Button>
@@ -36,7 +33,7 @@ export default function DashboardPage() {
             <h2 className='mb-3  text-xl font-semibold'>{t('Approachable')}</h2>
             <p className='text-text-secondary max-lg:max-w-[500px]'>
               {t(
-                'Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features'
+                'Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features',
               )}
             </p>
           </div>
@@ -44,7 +41,7 @@ export default function DashboardPage() {
             <h2 className='mb-3 text-xl font-semibold'>{t('Versatile')}</h2>
             <p className='text-text-secondary max-lg:max-w-[500px]'>
               {t(
-                'Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals'
+                'Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals',
               )}
             </p>
           </div>
@@ -52,12 +49,12 @@ export default function DashboardPage() {
             <h2 className='mb-3 text-xl font-semibold'>{t('Performant')}</h2>
             <p className='text-text-secondary max-lg:max-w-[500px]'>
               {t(
-                'A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app'
+                'A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app',
               )}
             </p>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

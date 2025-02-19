@@ -1,20 +1,20 @@
-'use client'
-import { capitalize } from '@/lib/utils'
-import { useTranslations } from 'next-intl'
-import { useTheme } from 'next-themes'
-import { useEffect, useRef, useState } from 'react'
-import { FiSun } from 'react-icons/fi'
-import { useOnClickOutside } from 'usehooks-ts'
-import Button from './Button'
+'use client';
+import { capitalize } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { useEffect, useRef, useState } from 'react';
+import { FiSun } from 'react-icons/fi';
+import { useOnClickOutside } from 'usehooks-ts';
+import Button from './Button';
 
 export default function ThemeSwitch() {
-  const t = useTranslations('')
-  const [mounted, setMounted] = useState(false)
-  const [isOpen, setIsOpen] = useState(false) // New state to control dropdown visibility
-  const { setTheme, resolvedTheme, themes, theme } = useTheme()
-  const ref = useRef(null)
-  useEffect(() => setMounted(true), [])
-  useOnClickOutside(ref, () => setIsOpen(false))
+  const t = useTranslations('');
+  const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // New state to control dropdown visibility
+  const { setTheme, themes, theme } = useTheme();
+  const ref = useRef(null);
+  useEffect(() => setMounted(true), []);
+  useOnClickOutside(ref, () => setIsOpen(false));
   if (!mounted)
     return (
       <Button
@@ -28,11 +28,11 @@ export default function ThemeSwitch() {
         <span className='ml-2'>{t('Theme')}</span>
         <FiSun />
       </Button>
-    )
+    );
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div ref={ref} className='relative inline-block text-left'>
@@ -55,13 +55,13 @@ export default function ThemeSwitch() {
             aria-orientation='vertical'
             aria-labelledby='options-menu'
           >
-            {themes.map(themeItem => {
+            {themes.map((themeItem) => {
               return (
                 <button
                   key={themeItem}
                   onClick={() => {
-                    setTheme(themeItem)
-                    setIsOpen(false)
+                    setTheme(themeItem);
+                    setIsOpen(false);
                   }}
                   className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
                     themeItem === theme
@@ -71,11 +71,11 @@ export default function ThemeSwitch() {
                 >
                   {capitalize(themeItem)}
                 </button>
-              )
+              );
             })}
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }

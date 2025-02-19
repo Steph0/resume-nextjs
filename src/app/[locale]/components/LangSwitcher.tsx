@@ -1,25 +1,25 @@
-'use client'
-import { capitalize } from '@/lib/utils'
-import Link from 'next/link'
-import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
-import React, { useState } from 'react'
-import { FiGlobe } from 'react-icons/fi'
-import Button from './Button'
+'use client';
+import { capitalize } from '@/lib/utils';
+import Link from 'next/link';
+import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
+import React, { useState } from 'react';
+import { FiGlobe } from 'react-icons/fi';
+import Button from './Button';
 
 const LangSwitcher: React.FC = () => {
   interface Option {
-    country: string
-    code: string
+    country: string;
+    code: string;
   }
-  const pathname = usePathname()
-  const urlSegments = useSelectedLayoutSegments()
+  const pathname = usePathname();
+  const urlSegments = useSelectedLayoutSegments();
 
-  const [isOptionsExpanded, setIsOptionsExpanded] = useState(false)
+  const [isOptionsExpanded, setIsOptionsExpanded] = useState(false);
   const options: Option[] = [
     { country: 'English', code: 'en' },
     { country: 'Français', code: 'fr' },
     { country: '日本語', code: 'ja' },
-  ]
+  ];
 
   return (
     <div className='flex items-center justify-center'>
@@ -41,7 +41,7 @@ const LangSwitcher: React.FC = () => {
               aria-orientation='vertical'
               aria-labelledby='options-menu'
             >
-              {options.map(lang => {
+              {options.map((lang) => {
                 return (
                   <Link
                     key={lang.code}
@@ -49,8 +49,8 @@ const LangSwitcher: React.FC = () => {
                   >
                     <button
                       lang={lang.code}
-                      onMouseDown={e => {
-                        e.preventDefault()
+                      onMouseDown={(e) => {
+                        e.preventDefault();
                       }}
                       className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
                         pathname === `/${lang.code}`
@@ -61,14 +61,14 @@ const LangSwitcher: React.FC = () => {
                       {capitalize(lang.country)}
                     </button>
                   </Link>
-                )
+                );
               })}
             </div>
           </div>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LangSwitcher
+export default LangSwitcher;

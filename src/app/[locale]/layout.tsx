@@ -1,32 +1,33 @@
-import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider'
-import type { Metadata } from 'next'
+import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
+import type { Metadata } from 'next';
 import {
   AbstractIntlMessages,
   NextIntlClientProvider,
-  useMessages
-} from 'next-intl'
-import { Inter } from 'next/font/google'
-import NextTopLoader from 'nextjs-toploader'
-import { Header } from './components/Header'
-import './globals.css'
+  useMessages,
+} from 'next-intl';
+import { Inter } from 'next/font/google';
+import NextTopLoader from 'nextjs-toploader';
+import { Header } from './components/Header';
+import './globals.css';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--inter'
-})
+  variable: '--inter',
+});
 export const metadata: Metadata = {
   title: 'Stephen M. resume',
-  description: 'Stephen M. resume - NextJs (React)'
-}
+  description: 'Stephen M. resume - NextJs (React)',
+};
 
 export default function RootLayout({
   children,
-  params: { locale }
+  params: { locale },
 }: {
-  children: React.ReactNode
-  params: { locale: string }
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
-  const messages = useMessages()
+  const messages = useMessages();
   return (
     <html
       lang={locale}
@@ -39,10 +40,7 @@ export default function RootLayout({
           enableSystem
           attribute='class'
           defaultTheme='light'
-          themes={[
-            'light',
-            'dark',
-          ]}
+          themes={['light', 'dark']}
         >
           <NextIntlClientProvider
             locale={locale}
@@ -65,5 +63,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

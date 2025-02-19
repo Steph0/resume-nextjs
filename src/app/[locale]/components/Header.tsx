@@ -1,18 +1,18 @@
-'use client'
-import { Link } from '@/src/navigation'
-import { useTranslations } from 'next-intl'
-import { FC } from 'react'
-import GithubIcon from '../../icons/github'
-import LangSwitcher from './LangSwitcher'
-import ThemeSwitch from './ThemeSwitch'
+'use client';
+import { Link } from '@/src/navigation';
+import { useTranslations } from 'next-intl';
+import { FC } from 'react';
+import GithubIcon from '../../icons/github';
+import LangSwitcher from './LangSwitcher';
+import ThemeSwitch from './ThemeSwitch';
 interface Props {
-  locale: string
+  locale: string;
 }
 export const Header: FC<Props> = ({ locale }) => {
-  const t = useTranslations('')
+  const t = useTranslations('');
   return (
     <div className='mx-auto flex max-w-screen-2xl flex-row items-center justify-between p-5'>
-      <nav className='text-button mr-10 inline-flex gap-5'>
+      <nav className='mr-10 inline-flex gap-5 text-button'>
         <Link lang={locale} href={`/`}>
           &lt;back_to_roots /&gt;
         </Link>
@@ -39,5 +39,5 @@ export const Header: FC<Props> = ({ locale }) => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
