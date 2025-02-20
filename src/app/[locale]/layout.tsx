@@ -1,3 +1,4 @@
+import { use } from 'react';
 import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
 import type { Metadata } from 'next';
 import {
@@ -20,13 +21,16 @@ export const metadata: Metadata = {
   description: 'Stephen M. resume - NextJs (React)',
 };
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: {
+export default function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const params = use(props.params);
+
+  const { locale } = params;
+
+  const { children } = props;
+
   const messages = useMessages();
   return (
     <html

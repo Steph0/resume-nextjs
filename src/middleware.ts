@@ -1,26 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
-import { locales } from './i18n';
-import { localePrefix } from './navigation';
-type CustomMiddleware = (req: NextRequest) => Promise<NextRequest>;
-const customMiddleware: CustomMiddleware = async (req) => {
-  console.log('Custom middleware executed before next-intl');
-  return req;
-};
+import { routing } from '@/src/i18n/routing';
 
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale: 'en',
-  localePrefix,
-});
-
-export default async function middleware(
-  req: NextRequest,
-): Promise<ReturnType<typeof intlMiddleware>> {
-  await customMiddleware(req);
-  return intlMiddleware(req);
-}
+export default createMiddleware(routing);
 
 export const config = {
+  // Match only internationalized pathnames
   matcher: ['/', '/(fr|en|ja)/:path*'],
 };

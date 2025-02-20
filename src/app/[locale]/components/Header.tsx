@@ -1,5 +1,5 @@
 'use client';
-import { Link } from '@/src/navigation';
+import { Link } from '@/src/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import GithubIcon from '../../icons/github';
