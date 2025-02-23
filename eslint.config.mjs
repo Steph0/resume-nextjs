@@ -2,6 +2,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -12,7 +13,6 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
   {
     languageOptions: {
       globals: {
@@ -27,7 +27,17 @@ const eslintConfig = [
       },
     },
   },
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:testing-library/react',
+    'prettier',
+  ),
   eslintPluginPrettierRecommended,
+  {
+    files: ['**/*.test.tsx', '**/*.test.ts'],
+    ...testingLibrary.configs['flat/react'],
+  },
 ];
 
 export default eslintConfig;
