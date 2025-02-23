@@ -1,4 +1,12 @@
 {
+  "Header": {
+    "home": "Retour à l'acceuil",
+    "githubPortfolio": {
+      "href": "https://github.com/Steph0/",
+      "label": "Accéder à mon Github"
+    },
+    "theme": "Thème"
+  },
   "About": "À propos",
   "Support": "Support",
   "Other": "Autre",

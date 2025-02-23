@@ -1,4 +1,12 @@
 {
+  "Header": {
+    "home": "ホームページに戻る",
+    "githubPortfolio": {
+      "href": "https://github.com/Steph0/",
+      "label": "私のGithubポートフォリオをご覧ください"
+    },
+    "theme": "テーマ"
+  },
   "About": "概要",
   "Support": "サポート",
   "Other": "その他",
