@@ -39,7 +39,7 @@ const config = {
       },
 
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'var(--rubik)'],
+        sans: ['var(--font-noto-sans-jp)'],
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

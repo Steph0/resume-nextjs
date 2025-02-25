@@ -1,4 +1,4 @@
-import { use } from 'react';
+import { ReactNode, use } from 'react';
 import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
 import type { Metadata } from 'next';
 import {
@@ -6,15 +6,15 @@ import {
   NextIntlClientProvider,
   useMessages,
 } from 'next-intl';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import { Header } from './components/Header';
 import './globals.css';
+import { cn } from '@/lib/utils';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const inter = Inter({
+const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
-  variable: '--inter',
+  variable: '--font-noto-sans-jp',
 });
 export const metadata: Metadata = {
   title: 'Stephen M. resume',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout(props: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const params = use(props.params);
@@ -36,7 +36,7 @@ export default function RootLayout(props: {
     <html
       lang={locale}
       dir={'ltr'}
-      className={'scroll-smooth'}
+      className={cn(notoSansJP.variable, 'font-sans', 'scroll-smooth')}
       suppressHydrationWarning
     >
       <body>
