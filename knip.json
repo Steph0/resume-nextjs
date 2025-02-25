@@ -1,0 +1,9 @@
+{
+  "ignoreDependencies": [
+    "@eslint/eslintrc",
+    "globals",
+    "postcss-load-config",
+    "eslint-config-next"
+  ],
+  "ignore": ["src/i18n/request.ts"]
+}

@@ -1,10 +1,11 @@
 'use client';
 import { capitalize } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
+import { useSelectedLayoutSegments } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 import Button from './Button';
+import { usePathname } from '@/src/i18n/routing';
 
 const LangSwitcher: React.FC = () => {
   interface Option {

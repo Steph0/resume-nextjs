@@ -10,7 +10,8 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "vitest",
-    "test:ui": "vitest-preview"
+    "test:ui": "vitest-preview",
+    "cleanup": "knip"
   },
   "engines": {
     "node": ">=20.15.0"
@@ -33,7 +34,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
-    "@types/node": "^20",
+    "@types/node": "^20.17.19",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
@@ -43,11 +44,12 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-testing-library": "^7.1.1",
     "jsdom": "^26.0.0",
+    "knip": "^5.45.0",
     "postcss": "^8.5.2",
     "prettier": "3.5.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5",
+    "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.6",
     "vitest-preview": "^0.0.1"
