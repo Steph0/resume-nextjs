@@ -11,7 +11,7 @@ interface Props {
   locale: string;
 }
 export const Header: FC<Props> = ({ locale }) => {
-  const t = useTranslations();
+  const t = useTranslations('header');
   return (
     <div className='mx-auto flex max-w-screen-2xl flex-row items-center justify-between p-5 print:hidden'>
       <nav className='mr-10 inline-flex gap-5 text-button'>
@@ -19,8 +19,8 @@ export const Header: FC<Props> = ({ locale }) => {
           lang={locale}
           href={`/`}
           className='size-8'
-          title={t('Header.home')}
-          aria-label={t('Header.home')}
+          title={t('home')}
+          aria-label={t('home')}
         >
           <HomeIcon />
         </Link>
@@ -29,10 +29,10 @@ export const Header: FC<Props> = ({ locale }) => {
         <ThemeSwitch />
         <LangSwitcher />
         <a
-          href={t('Header.githubPortfolio.href')}
+          href={t('githubPortfolio.href')}
           target='_blank'
-          aria-label={t('Header.githubPortfolio.label')}
-          title={t('Header.githubPortfolio.label')}
+          aria-label={t('githubPortfolio.label')}
+          title={t('githubPortfolio.label')}
           rel='noopener noreferrer'
         >
           <div className='size-8'>
