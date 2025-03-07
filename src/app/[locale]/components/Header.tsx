@@ -14,7 +14,7 @@ export const Header: FC<Props> = ({ locale }) => {
   const t = useTranslations('header');
   return (
     <div className='mx-auto flex max-w-screen-2xl flex-row items-center justify-between p-5 print:hidden'>
-      <nav className='mr-10 inline-flex gap-5 text-button'>
+      <nav className='text-button mr-10 inline-flex gap-5'>
         <Link
           lang={locale}
           href={`/`}
