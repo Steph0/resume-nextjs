@@ -1,6 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --background-image-span-bg: var(--span-bg);
+
+  --color-background: var(--background);
+
+  --color-primary: var(--primary);
+
+  --color-button-secondary: var(--button-secondary);
+  --color-button-text: var(--button-text);
+  --color-text-secondary: var(--text-secondary);
+  --color-background-secondary: var(--background-secondary);
+  --color-secondary: var(--secondary);
+  --color-button: var(--button);
+  --color-selected: var(--selected);
+  --color-dropdown: var(--dropdown);
+  --color-dropdown-hover: var(--dropdown-hover);
+  --color-button-secondary: var(--button-secondary);
+
+  --font-sans: var(--font-noto-sans-jp);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
 
 @layer base {
   :root {
@@ -48,8 +72,5 @@
     background-color: rgb(121, 255, 225);
     text-shadow: rgb(0, 102, 255) 0px 0px 7px;
     color: rgb(248, 28, 229);
-  }
-  body {
-    @apply bg-background text-primary;
   }
 }
