@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 
-export const DashboardPage = () => {
+export default function DashboardPage() {
   const t = useTranslations('dashboard');
   return (
     <div className='p-5'>
       <section className='flex flex-col items-center justify-center py-24'>
-        <h1 className='text-center text-6xl font-extrabold leading-tight'>
+        <h1 className='text-center text-6xl leading-tight font-extrabold'>
           <span className='bg-span-bg bg-clip-text text-transparent'>
             {t('presentation')}
           </span>
@@ -21,7 +21,7 @@ export const DashboardPage = () => {
           <p className='text-text-secondary'>{t('middle_item_text')}</p>
         </div>
         <div className='bg-background-secondary p-4 text-center'>
-          <h2 className='text-xl '>{t('right_item_title')}</h2>
+          <h2 className='text-xl'>{t('right_item_title')}</h2>
           <p className='text-text-secondary'>{t('right_item_text')}</p>
         </div>
       </section>

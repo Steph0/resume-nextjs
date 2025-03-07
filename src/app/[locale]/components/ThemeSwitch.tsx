@@ -48,7 +48,7 @@ export default function ThemeSwitch() {
         <FiSun />
       </Button>
       {isOpen && (
-        <div className='absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>
+        <div className='bg-dropdown absolute right-0 mt-2 w-full origin-top-right rounded-md shadow-lg'>
           <div
             className='py-1'
             role='menu'
@@ -63,7 +63,7 @@ export default function ThemeSwitch() {
                     setTheme(themeItem);
                     setIsOpen(false);
                   }}
-                  className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
+                  className={`hover:bg-dropdownHover block w-full px-4 py-2 text-left text-sm ${
                     themeItem === theme
                       ? 'bg-selected text-primary hover:bg-selected'
                       : 'text-secondary'

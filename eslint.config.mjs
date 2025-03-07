@@ -15,9 +15,6 @@ const compat = new FlatCompat({
 const eslintConfig = [
   {
     languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
       ecmaVersion: 12,
       sourceType: 'module',
       parserOptions: {
