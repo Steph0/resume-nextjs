@@ -11,8 +11,7 @@
   },
   "dashboard": {
     "presentation": "Hi! I'm Stephen",
-    "left_item_title": "Title",
-    "left_item_text": "Text",
+    "photoAlt": "Photo of the author",
     "middle_item_title": "Title",
     "middle_item_text": "Text",
     "right_item_title": "Title",
