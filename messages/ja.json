@@ -12,8 +12,7 @@
   },
   "dashboard": {
     "presentation": "こんにちは！ステフェンです",
-    "left_item_title": "Title",
-    "left_item_text": "Text",
+    "photoAlt": "すてふぇんの写真",
     "middle_item_title": "Title",
     "middle_item_text": "Text",
     "right_item_title": "Title",
