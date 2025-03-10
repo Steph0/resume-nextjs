@@ -6,15 +6,13 @@ import photo from '@/public/img-profile.jpg';
 export default function DashboardPage() {
   const t = useTranslations('dashboard');
   return (
-    <div className='p-5'>
-      <section className='flex flex-col items-center justify-center py-4 md:py-24'>
-        <h1 className='text-center text-4xl leading-tight font-extrabold sm:text-6xl'>
-          <span className='bg-span-bg bg-clip-text text-transparent'>
-            {t('presentation')}
-          </span>
-        </h1>
-      </section>
-      <section className='flex flex-auto flex-col gap-4 sm:justify-center md:flex-row md:gap-24 lg:gap-36'>
+    <section className='px-5'>
+      <h1 className='pb-4 text-center text-4xl leading-tight font-extrabold sm:text-6xl md:py-24'>
+        <span className='bg-span-bg bg-clip-text text-transparent'>
+          {t('presentation')}
+        </span>
+      </h1>
+      <div className='flex flex-auto flex-col gap-4 sm:justify-center md:flex-row md:gap-24 lg:gap-36'>
         <Card className='relative m-auto md:m-0'>
           <Image
             src={photo}
@@ -38,7 +36,7 @@ export default function DashboardPage() {
           text={t('right_item_text')}
           className='bg-background-secondary p-2'
         />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
