@@ -15,6 +15,6 @@
     "profileTitle": "Senior Software Developer",
     "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
     "aboutThisWebsiteTitle": "A playground...",
-    "aboutThisWebsiteText": "I crafted this responsive i18n website using Next.js. Hosted on Google Cloud Platform via Github Actions. Tested with Testing Library and Vitest. I also tried TailwindCss for fun."
+    "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js. Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform."
   }
 }

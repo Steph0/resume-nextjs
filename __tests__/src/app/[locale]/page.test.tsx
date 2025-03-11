@@ -42,8 +42,7 @@ describe('DashboardPage', () => {
     );
 
     // then
-    const cards = screen.getAllByRole('article');
-    const image = within(cards[0]).getByAltText('Photo of the author');
+    const image = screen.getByAltText('Photo of the author');
     expect(image).toBeDefined();
   });
 
@@ -63,13 +62,13 @@ describe('DashboardPage', () => {
 
     // then
     const cards = screen.getAllByRole('article');
-    const title = within(cards[1]).getByRole('heading', {
+    const title = within(cards[0]).getByRole('heading', {
       level: 2,
       name: 'Senior Software Developer',
     });
     expect(title).toBeDefined();
 
-    const text = within(cards[1]).getByRole('paragraph');
+    const text = within(cards[0]).getByRole('paragraph');
     expect(text).toHaveTextContent('Passionate about my job');
   });
 
@@ -89,13 +88,13 @@ describe('DashboardPage', () => {
 
     // then
     const cards = screen.getAllByRole('article');
-    const title = within(cards[2]).getByRole('heading', {
+    const title = within(cards[1]).getByRole('heading', {
       level: 2,
       name: 'A playground...',
     });
     expect(title).toBeDefined();
 
-    const text = within(cards[2]).getByRole('paragraph');
-    expect(text).toHaveTextContent('I crafted this responsive i18n website');
+    const text = within(cards[1]).getByRole('paragraph');
+    expect(text).toHaveTextContent('Responsive i18n website');
   });
 });
