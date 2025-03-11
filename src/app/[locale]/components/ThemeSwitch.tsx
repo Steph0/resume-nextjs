@@ -8,7 +8,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 import Button from './Button';
 
 export default function ThemeSwitch() {
-  const t = useTranslations('header.themeSwitch');
+  const t = useTranslations('Header.ThemeSwitch');
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // New state to control dropdown visibility
   const { setTheme, themes, theme } = useTheme();

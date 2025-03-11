@@ -11,7 +11,7 @@ interface Props {
   locale: string;
 }
 export const Header: FC<Props> = ({ locale }) => {
-  const t = useTranslations('header');
+  const t = useTranslations('Header');
   return (
     <div className='mx-auto flex max-w-(--breakpoint-2xl) flex-row items-center justify-between p-5 print:hidden'>
       <nav className='text-button mr-10 inline-flex gap-5'>

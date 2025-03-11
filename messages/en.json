@@ -1,20 +1,20 @@
 {
-  "header": {
+  "Header": {
     "home": "Back to homepage",
     "githubPortfolio": {
       "href": "https://github.com/Steph0/",
       "label": "See my Github portfolio"
     },
-    "themeSwitch": {
+    "ThemeSwitch": {
       "label": "Theme"
     }
   },
-  "dashboard": {
+  "Dashboard": {
     "presentation": "Hi! I'm Stephen",
     "photoAlt": "Photo of the author",
-    "middle_item_title": "Title",
-    "middle_item_text": "Text",
-    "right_item_title": "Title",
-    "right_item_text": "Text"
+    "profileTitle": "Senior Software Developer",
+    "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
+    "aboutThisWebsiteTitle": "A playground...",
+    "aboutThisWebsiteText": "I crafted this responsive i18n website using Next.js. Hosted on Google Cloud Platform via Github Actions. Tested with Testing Library and Vitest. I also tried TailwindCss for fun."
   }
 }

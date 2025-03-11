@@ -46,4 +46,56 @@ describe('DashboardPage', () => {
     const image = within(cards[0]).getByAltText('Photo of the author');
     expect(image).toBeDefined();
   });
+
+  test('it should contain my profile description', async () => {
+    // given
+    const locale = 'en';
+
+    // when
+    render(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages as AbstractIntlMessages}
+      >
+        <DashboardPage />
+      </NextIntlClientProvider>,
+    );
+
+    // then
+    const cards = screen.getAllByRole('article');
+    const title = within(cards[1]).getByRole('heading', {
+      level: 2,
+      name: 'Senior Software Developer',
+    });
+    expect(title).toBeDefined();
+
+    const text = within(cards[1]).getByRole('paragraph');
+    expect(text).toHaveTextContent('Passionate about my job');
+  });
+
+  test('it should contain an about this site card', async () => {
+    // given
+    const locale = 'en';
+
+    // when
+    render(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages as AbstractIntlMessages}
+      >
+        <DashboardPage />
+      </NextIntlClientProvider>,
+    );
+
+    // then
+    const cards = screen.getAllByRole('article');
+    const title = within(cards[2]).getByRole('heading', {
+      level: 2,
+      name: 'A playground...',
+    });
+    expect(title).toBeDefined();
+
+    const text = within(cards[2]).getByRole('paragraph');
+    expect(text).toHaveTextContent('I crafted this responsive i18n website');
+  });
 });

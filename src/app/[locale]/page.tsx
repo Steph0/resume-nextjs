@@ -4,7 +4,7 @@ import Image from 'next/image';
 import photo from '@/public/img-profile.jpg';
 
 export default function DashboardPage() {
-  const t = useTranslations('dashboard');
+  const t = useTranslations('Dashboard');
   return (
     <section className='px-5'>
       <h1 className='pb-4 text-center text-4xl leading-tight font-extrabold sm:text-6xl md:py-24'>
@@ -27,13 +27,13 @@ export default function DashboardPage() {
         </Card>
 
         <Card
-          title={t('middle_item_title')}
-          text={t('middle_item_text')}
+          title={t('profileTitle')}
+          text={t('profileText')}
           className='bg-background-secondary p-2'
         />
         <Card
-          title={t('right_item_title')}
-          text={t('right_item_text')}
+          title={t('aboutThisWebsiteTitle')}
+          text={t('aboutThisWebsiteText')}
           className='bg-background-secondary p-2'
         />
       </div>
