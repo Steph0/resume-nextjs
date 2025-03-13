@@ -39,7 +39,7 @@ export default function RootLayout(props: {
       className={cn(notoSansJP.variable, 'font-sans', 'scroll-smooth')}
       suppressHydrationWarning
     >
-      <body className='bg-background text-primary'>
+      <body className='bg-background text-primary flex h-screen flex-col'>
         <ThemeProvider
           enableSystem
           attribute='class'
@@ -62,7 +62,9 @@ export default function RootLayout(props: {
               showSpinner={false}
             />
             <Header locale={locale} />
-            <main className='mx-auto max-w-(--breakpoint-2xl)'>{children}</main>
+            <main className='max-w-(--breakpoint-2xl) flex-auto'>
+              {children}
+            </main>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

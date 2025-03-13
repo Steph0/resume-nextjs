@@ -97,4 +97,23 @@ describe('DashboardPage', () => {
     const text = within(cards[1]).getByRole('paragraph');
     expect(text).toHaveTextContent('Responsive i18n website');
   });
+
+  test('it should contain an arrow image to view more', async () => {
+    // given
+    const locale = 'en';
+
+    // when
+    render(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages as AbstractIntlMessages}
+      >
+        <DashboardPage />
+      </NextIntlClientProvider>,
+    );
+
+    // then
+    const image = screen.getByAltText('View more');
+    expect(image).toBeDefined();
+  });
 });
