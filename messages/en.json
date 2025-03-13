@@ -10,12 +10,18 @@
     }
   },
   "Dashboard": {
-    "presentation": "Hi! I'm Stephen",
-    "photoAlt": "Photo of the author",
-    "profileTitle": "Senior Software Developer",
-    "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
-    "aboutThisWebsiteTitle": "A playground...",
-    "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js.<br></br>Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform.",
+    "Presentation": {
+      "title": "Hi! I'm Stephen",
+      "photoAlt": "Photo of the author",
+      "profileTitle": "Senior Software Developer",
+      "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
+      "aboutThisWebsiteTitle": "A playground...",
+      "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js.<br></br>Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform."
+    },
+    "Skills": {
+      "title": "Skills"
+    },
+    "loading": "Loading...",
     "viewMoreAlt": "View more"
   }
 }
