@@ -5,7 +5,7 @@ export default function Skills(): ReactNode {
   const t = useTranslations('Dashboard.Skills');
 
   return (
-    <section className='px-10 py-5'>
+    <section id='skills' className='pb-5 sm:px-5'>
       <h1 className='py-5 text-4xl leading-tight font-extrabold'>
         {t('title')}
       </h1>
