@@ -2,6 +2,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer components {
+  .after-triangle {
+    &::after {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background-color: theme('colors.background-secondary');
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+      outline: auto;
+      outline-color: theme('colors.background-secondary');
+    }
+  }
+}
+
 @theme {
   --background-image-span-bg: var(--span-bg);
 

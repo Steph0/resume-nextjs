@@ -8,14 +8,14 @@ import arrowDown from '@/public/arrow-down.svg';
 import Image from 'next/image';
 
 export default function DashboardPage(): ReactNode {
-  const [loadMore, setLoadMore] = useState(false);
+  const [loadMore, setLoadMore] = useState(true);
   const onLoadMore = (): void => setLoadMore(true);
   const t = useTranslations('Dashboard');
 
   const DynamicSkills = dynamic(
     () => import('./components/DashboardPage/Skills/Skills'),
     {
-      loading: () => <p>{t('loading')}</p>,
+      loading: () => <p className='m-auto text-center'>{t('loading')}</p>,
     },
   );
 

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import photo from '@/public/img-profile.jpg';
 import { CardTitle } from './CardTitle';
 import { CardText } from './CardText';
-import { cn } from '@/lib/utils';
 
 interface PresentationProps {
   className?: string;
@@ -16,7 +15,7 @@ export default function Presentation({
 }: PresentationProps): ReactNode {
   const t = useTranslations('Dashboard.Presentation');
   return (
-    <section className={cn('px-5', className)}>
+    <section className={className}>
       <h1 className='text-center text-4xl leading-tight font-extrabold sm:text-6xl md:py-24'>
         <span className='bg-span-bg bg-clip-text text-transparent'>
           {t('title')}
