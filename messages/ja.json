@@ -1,43 +1,42 @@
 {
+  "Dashboard": {
+    "Presentation": {
+      "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js. Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform.",
+      "aboutThisWebsiteTitle": "A playground...",
+      "photoAlt": "すてふぇんの写真",
+      "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
+      "profileTitle": "上 級ソフトウェア開発者",
+      "title": "こんにちは！ステフェンです"
+    },
+    "Skills": {
+      "languages": {
+        "en": {
+          "description": "proficient ; TOEIC: 905/990 + lived and worked in Australia",
+          "label": "English"
+        },
+        "fr": {
+          "description": "native speaker",
+          "label": "French"
+        },
+        "jp": {
+          "description": "basic ; 116 hours of professional Japanese lessons at Espace Lyon Japon",
+          "label": "Japanese"
+        },
+        "title": "Languages"
+      },
+      "title": "Skills"
+    },
+    "loading": "Loading...",
+    "viewMoreAlt": "View more"
+  },
   "Header": {
-    "home": "ホームページに戻る",
+    "ThemeSwitch": {
+      "label": "テーマ"
+    },
     "githubPortfolio": {
       "href": "https://github.com/Steph0/",
       "label": "私のGithubポートフォリオをご覧ください"
     },
-
-    "ThemeSwitch": {
-      "label": "テーマ"
-    }
-  },
-  "Dashboard": {
-    "Presentation": {
-      "title": "こんにちは！ステフェンです",
-      "photoAlt": "すてふぇんの写真",
-      "profileTitle": "上 級ソフトウェア開発者",
-      "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
-      "aboutThisWebsiteTitle": "A playground...",
-      "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js. Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform."
-    },
-    "Skills": {
-      "title": "Skills",
-      "languages": {
-        "title": "Languages",
-        "fr": {
-          "label": "French",
-          "description": "native speaker"
-        },
-        "en": {
-          "label": "English",
-          "description": "proficient ; TOEIC: 905/990 + lived and worked in Australia"
-        },
-        "jp": {
-          "label": "Japanese",
-          "description": "basic ; 116 hours of professional Japanese lessons at Espace Lyon Japon"
-        }
-      }
-    },
-    "loading": "Loading...",
-    "viewMoreAlt": "View more"
+    "home": "ホームページに戻る"
   }
 }

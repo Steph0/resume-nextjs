@@ -2,6 +2,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import tsParser from '@typescript-eslint/parser';
+import i18nJsonPlugin from 'eslint-plugin-i18n-json';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import testingLibrary from 'eslint-plugin-testing-library';
@@ -57,6 +58,17 @@ const eslintConfig = [
   {
     files: ['**/*.test.tsx', '**/*.test.ts'],
     ...testingLibrary.configs['flat/react'],
+  },
+  {
+    files: ['messages/*.json'],
+    plugins: { 'i18n-json': i18nJsonPlugin },
+    processor: {
+      meta: { name: '.json' },
+      ...i18nJsonPlugin.processors['.json'],
+    },
+    rules: {
+      ...i18nJsonPlugin.configs.recommended.rules,
+    },
   },
 ];
 
