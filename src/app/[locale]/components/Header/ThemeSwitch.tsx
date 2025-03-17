@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FiSun } from 'react-icons/fi';
 import { useOnClickOutside } from 'usehooks-ts';
 import { Button } from './Button';
-import { capitalize } from '@/lib/utils';
+import { capitalize } from '@/src/app/lib/utils';
 
 export default function ThemeSwitch() {
   const t = useTranslations('Header.ThemeSwitch');

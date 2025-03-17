@@ -8,8 +8,8 @@ import {
 import NextTopLoader from 'nextjs-toploader';
 import { ReactNode, use } from 'react';
 import { Header } from './components/Header/Header';
-import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/src/app/[locale]/components/Header/ThemeProvider';
+import { cn } from '@/src/app/lib/utils';
 import './globals.css';
 
 const notoSansJP = Noto_Sans_JP({

@@ -4,7 +4,7 @@ import { useSelectedLayoutSegments } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 import { Button } from './Button';
-import { capitalize } from '@/lib/utils';
+import { capitalize } from '@/src/app/lib/utils';
 import { usePathname } from '@/src/i18n/routing';
 
 const LangSwitcher: React.FC = () => {

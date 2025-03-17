@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/src/app/lib/utils';
 
 interface CardProps extends PropsWithChildren {
   className?: string;
