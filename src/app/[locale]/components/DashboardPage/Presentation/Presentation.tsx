@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
-import { useTranslations } from 'next-intl';
-import { Card } from './Card';
 import Image from 'next/image';
-import photo from '@/public/img-profile.jpg';
-import { CardTitle } from './CardTitle';
+import { useTranslations } from 'next-intl';
+import { ReactNode } from 'react';
+import { Card } from './Card';
 import { CardText } from './CardText';
+import { CardTitle } from './CardTitle';
+import photo from '@/public/img-profile.jpg';
 
 interface PresentationProps {
   className?: string;

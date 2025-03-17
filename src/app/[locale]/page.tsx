@@ -1,12 +1,12 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { ReactNode, useState } from 'react';
-import Presentation from './components/DashboardPage/Presentation/Presentation';
-import { useTranslations } from 'next-intl';
-import arrowDown from '@/public/arrow-down.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { ReactNode, useState } from 'react';
+import Presentation from './components/DashboardPage/Presentation/Presentation';
+import arrowDown from '@/public/arrow-down.svg';
 
 export default function DashboardPage(): ReactNode {
   const [loadMore, setLoadMore] = useState(false);

@@ -1,9 +1,9 @@
 {
   "ignoreDependencies": [
     "@eslint/eslintrc",
-    "globals",
     "postcss-load-config",
-    "eslint-config-next"
+    "eslint-config-next",
+    "eslint-import-resolver-typescript"
   ],
   "ignore": ["src/i18n/request.ts"]
 }

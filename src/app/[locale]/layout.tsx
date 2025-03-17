@@ -1,16 +1,16 @@
-import { ReactNode, use } from 'react';
-import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
 import type { Metadata } from 'next';
+import { Noto_Sans_JP } from 'next/font/google';
 import {
   AbstractIntlMessages,
   NextIntlClientProvider,
   useMessages,
 } from 'next-intl';
-import { Noto_Sans_JP } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
+import { ReactNode, use } from 'react';
 import { Header } from './components/Header';
-import './globals.css';
 import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
+import './globals.css';
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
