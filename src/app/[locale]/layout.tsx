@@ -7,9 +7,9 @@ import {
 } from 'next-intl';
 import NextTopLoader from 'nextjs-toploader';
 import { ReactNode, use } from 'react';
-import { Header } from './components/Header';
+import { Header } from './components/Header/Header';
 import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider';
+import { ThemeProvider } from '@/src/app/[locale]/components/Header/ThemeProvider';
 import './globals.css';
 
 const notoSansJP = Noto_Sans_JP({

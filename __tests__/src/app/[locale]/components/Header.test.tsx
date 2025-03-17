@@ -1,7 +1,7 @@
-import { describe, expect, test } from 'vitest';
 import { screen } from '@testing-library/react';
-import { Header } from '@/src/app/[locale]/components/Header';
+import { describe, expect, test } from 'vitest';
 import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
+import { Header } from '@/src/app/[locale]/components/Header/Header';
 
 describe('Header', () => {
   test('it should contain a homepage link', async () => {

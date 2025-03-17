@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
-import GithubIcon from '../../icons/github';
+import GithubIcon from '../../../icons/github';
 import LangSwitcher from './LangSwitcher';
 import ThemeSwitch from './ThemeSwitch';
 import { HomeIcon } from '@/src/app/icons/home';

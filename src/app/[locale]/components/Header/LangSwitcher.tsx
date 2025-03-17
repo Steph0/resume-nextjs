@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiGlobe } from 'react-icons/fi';
-import Button from './Button';
+import { Button } from './Button';
 import { capitalize } from '@/lib/utils';
 import { usePathname } from '@/src/i18n/routing';
 

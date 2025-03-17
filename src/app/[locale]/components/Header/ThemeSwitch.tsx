@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import { useEffect, useRef, useState } from 'react';
 import { FiSun } from 'react-icons/fi';
 import { useOnClickOutside } from 'usehooks-ts';
-import Button from './Button';
+import { Button } from './Button';
 import { capitalize } from '@/lib/utils';
 
 export default function ThemeSwitch() {

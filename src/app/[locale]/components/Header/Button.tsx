@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rounded?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   variant = 'primary',
   size = 'medium',
@@ -35,5 +35,3 @@ const Button: FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
