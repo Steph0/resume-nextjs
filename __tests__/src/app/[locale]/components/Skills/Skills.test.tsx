@@ -1,23 +1,12 @@
 import { describe, expect, test } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
-import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
-import messages from '@/messages/en.json';
+import { screen, within } from '@testing-library/react';
 import Skills from '@/src/app/[locale]/components/DashboardPage/Skills/Skills';
+import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
 
 describe('Skills', () => {
   test('it should have a title', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Skills />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Skills />);
 
     // then
     const title = screen.getByRole('heading', { name: 'Skills' });
@@ -25,18 +14,8 @@ describe('Skills', () => {
   });
 
   test('it should contain my languages skills', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Skills />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Skills />);
 
     // then
     const articles = screen.getAllByRole('article');

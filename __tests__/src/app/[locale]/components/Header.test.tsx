@@ -1,8 +1,7 @@
 import { describe, expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { Header } from '@/src/app/[locale]/components/Header';
-import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
-import messages from '@/messages/en.json';
+import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
 
 describe('Header', () => {
   test('it should contain a homepage link', async () => {
@@ -10,14 +9,7 @@ describe('Header', () => {
     const locale = 'en';
 
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Header locale={locale} />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Header locale={locale} />);
 
     // then
     const link = screen.getByRole('link', { name: 'Back to homepage' });
@@ -29,14 +21,7 @@ describe('Header', () => {
     const locale = 'en';
 
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Header locale={locale} />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Header locale={locale} />);
 
     // then
     const button = screen.getByRole('button', {
@@ -50,14 +35,7 @@ describe('Header', () => {
     const locale = 'en';
 
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Header locale={locale} />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Header locale={locale} />);
 
     // then
     const button = screen.getByRole('button', {
@@ -71,14 +49,7 @@ describe('Header', () => {
     const locale = 'en';
 
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <Header locale={locale} />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<Header locale={locale} />);
 
     // then
     const link = screen.getByRole('link', {

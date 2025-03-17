@@ -1,23 +1,12 @@
 import { describe, expect, test } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
-import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
-import messages from '@/messages/en.json';
+import { screen, within } from '@testing-library/react';
 import DashboardPage from '@/src/app/[locale]/page';
+import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
 
 describe('Presentation', () => {
   test('it should contain a presentation', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <DashboardPage />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<DashboardPage />);
 
     // then
     const link = screen.getByRole('heading', {
@@ -28,18 +17,8 @@ describe('Presentation', () => {
   });
 
   test('it should contain my profile picture', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <DashboardPage />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<DashboardPage />);
 
     // then
     const image = screen.getByAltText('Photo of the author');
@@ -47,18 +26,8 @@ describe('Presentation', () => {
   });
 
   test('it should contain my profile description', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <DashboardPage />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<DashboardPage />);
 
     // then
     const cards = screen.getAllByRole('article');
@@ -73,18 +42,8 @@ describe('Presentation', () => {
   });
 
   test('it should contain an about this site card', async () => {
-    // given
-    const locale = 'en';
-
     // when
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages as AbstractIntlMessages}
-      >
-        <DashboardPage />
-      </NextIntlClientProvider>,
-    );
+    renderI18n(<DashboardPage />);
 
     // then
     const cards = screen.getAllByRole('article');
