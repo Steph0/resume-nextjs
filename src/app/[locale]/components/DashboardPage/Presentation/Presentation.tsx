@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { ReactNode } from 'react';
 import { Card } from './Card';
@@ -37,7 +38,16 @@ export default function Presentation({
 
           <Card className='md:w-2/3'>
             <CardTitle title={t('profileTitle')} />
-            <CardText text={t('profileText')} />
+            <CardText
+              text={t.rich('profileText', {
+                readmore: (chunks) => (
+                  <Link passHref replace={true} scroll={true} href='#skills'>
+                    {chunks}
+                  </Link>
+                ),
+                br: () => <br />,
+              })}
+            />
           </Card>
         </div>
 

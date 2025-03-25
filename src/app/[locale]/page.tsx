@@ -3,14 +3,24 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import Presentation from './components/DashboardPage/Presentation/Presentation';
 import arrowDown from '@/public/arrow-down.svg';
 
 export default function DashboardPage(): ReactNode {
   const [loadMore, setLoadMore] = useState(false);
   const onLoadMore = (): void => setLoadMore(true);
+
+  const params = useSearchParams();
+
+  useEffect(() => {
+    if (window?.location?.hash === '#skills') {
+      setLoadMore(true);
+    }
+  }, [params]);
+
   const t = useTranslations('Dashboard');
 
   const DynamicSkills = dynamic(
@@ -24,16 +34,18 @@ export default function DashboardPage(): ReactNode {
         return mod.default;
       }),
     {
-      loading: () => <p className='m-auto text-center'>{t('loading')}</p>,
+      loading: () => (
+        <p className='m-auto my-4 text-center font-bold'>{t('loading')}</p>
+      ),
     },
   );
 
   return (
     <>
-      <div className='flex flex-col'>
+      <div className='flex flex-col' onWheel={onLoadMore}>
         <Presentation className='flex-auto' />
         <Link href='#skills'>
-          <div className='relative left-1/2 mt-8 h-12 w-12 pb-4 sm:h-15 sm:w-15'>
+          <div className='relative left-1/2 mt-8 h-12 w-12 pb-4 sm:h-15 sm:w-15 dark:invert'>
             <Image
               title={t('viewMoreAlt')}
               src={arrowDown}
