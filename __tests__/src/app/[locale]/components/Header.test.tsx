@@ -13,7 +13,7 @@ describe('Header', () => {
 
     // then
     const link = screen.getByRole('link', { name: 'Back to homepage' });
-    expect(link).toBeDefined();
+    expect(link).toBeInTheDocument();
   });
 
   test('it should contain a theme switcher', async () => {
@@ -27,7 +27,7 @@ describe('Header', () => {
     const button = screen.getByRole('button', {
       name: 'Theme',
     });
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
   });
 
   test('it should contain a language switcher', async () => {
@@ -41,7 +41,7 @@ describe('Header', () => {
     const button = screen.getByRole('button', {
       name: 'Language',
     });
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
   });
 
   test('it should contain a Github portfolio link', async () => {
@@ -55,6 +55,6 @@ describe('Header', () => {
     const link = screen.getByRole('link', {
       name: 'See my Github portfolio',
     });
-    expect(link).toBeDefined();
+    expect(link).toBeInTheDocument();
   });
 });

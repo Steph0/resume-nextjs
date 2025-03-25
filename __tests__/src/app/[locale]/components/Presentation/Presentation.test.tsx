@@ -1,7 +1,7 @@
-import { describe, expect, test } from 'vitest';
 import { screen, within } from '@testing-library/react';
-import DashboardPage from '@/src/app/[locale]/page';
+import { describe, expect, test } from 'vitest';
 import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
+import DashboardPage from '@/src/app/[locale]/page';
 
 describe('Presentation', () => {
   test('it should contain a presentation', async () => {
@@ -13,7 +13,7 @@ describe('Presentation', () => {
       level: 1,
       name: "Hi! I'm Stephen",
     });
-    expect(link).toBeDefined();
+    expect(link).toBeInTheDocument();
   });
 
   test('it should contain my profile picture', async () => {
@@ -22,7 +22,7 @@ describe('Presentation', () => {
 
     // then
     const image = screen.getByAltText('Photo of the author');
-    expect(image).toBeDefined();
+    expect(image).toBeInTheDocument();
   });
 
   test('it should contain my profile description', async () => {
@@ -35,7 +35,7 @@ describe('Presentation', () => {
       level: 2,
       name: 'Senior Software Developer',
     });
-    expect(title).toBeDefined();
+    expect(title).toBeInTheDocument();
 
     const text = within(cards[0]).getByRole('paragraph');
     expect(text).toHaveTextContent('Passionate about my job');
@@ -51,7 +51,7 @@ describe('Presentation', () => {
       level: 2,
       name: 'A playground...',
     });
-    expect(title).toBeDefined();
+    expect(title).toBeInTheDocument();
 
     const text = within(cards[1]).getByRole('paragraph');
     expect(text).toHaveTextContent('Responsive i18n website');

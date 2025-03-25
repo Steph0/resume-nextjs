@@ -1,7 +1,7 @@
-import { describe, expect, test } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
-import DashboardPage from '@/src/app/[locale]/page';
+import { describe, expect, test } from 'vitest';
 import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
+import DashboardPage from '@/src/app/[locale]/page';
 
 describe('DashboardPage', () => {
   test('it should only display the presentation at startup', async () => {
@@ -22,7 +22,7 @@ describe('DashboardPage', () => {
 
     // then
     const arrowDown = screen.getByAltText('View more');
-    expect(arrowDown).toBeDefined();
+    expect(arrowDown).toBeInTheDocument();
   });
 
   describe('when user clicks to view more', () => {
@@ -36,7 +36,7 @@ describe('DashboardPage', () => {
         level: 1,
         name: 'Skills',
       });
-      expect(skillSection).toBeDefined();
+      expect(skillSection).toBeInTheDocument();
     });
   });
 });
