@@ -4,22 +4,45 @@
       "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js.<br></br>Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform.",
       "aboutThisWebsiteTitle": "A playground...",
       "photoAlt": "Photo of the author",
-      "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects",
+      "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects.<br></br><br></br><readmore>Read more about me</readmore>",
       "profileTitle": "Senior Software Developer",
       "title": "Hi! I'm Stephen"
     },
     "Skills": {
+      "craftmanship": {
+        "backend": {
+          "description": "I have extended experience in <strong>Java</strong> (especially the Spring stack) and <strong>NodeJs</strong> and common associated components/practices (message brokers, cache mechanisms, transaction management, etc.).<br></br>I love crafting a great backend architecture by finding the right software design and tools depending on the project.",
+          "label": "Backend"
+        },
+        "craftmanship": {
+          "description": "Crafting a software is also about the Developer Experience and having tailored made.<br></br>Recently I'm deeply aligned with the ideas from <accelerate>Accelerate</accelerate> and <productmode>Product-mode</productmode> approaches.<br></br>This includes so many concepts and practices like <strong>pair/mob programming, TDD, Clean Architecture</strong>, up to more advanced ones like <strong>Design Driven Development or Continuous Delivery</strong>...",
+          "label": "Craftmanship"
+        },
+        "databases": {
+          "description": "PostgreSQL and Redis mainly !",
+          "label": "Databases"
+        },
+        "frontend": {
+          "description": "Through the years I mainly used <strong>React, Angular and Ember</strong> (using Typescript or not).<br></br>Accessibility (a11y), responsive design are practices that I find very important.<br></br>I'm used to working with CSS modules, CSS pre-processors, and design systems, however designing the UX/UI is not always my area of expertise.",
+          "label": "Frontend"
+        },
+        "platforms": {
+          "description": "I'm a big fan of <strong>Docker</strong> containers. I am used to <strong>AWS</strong> and OpenShift platforms (with or without Kubernetes).<br></br>Back in the day, I was running apps On-Premises. Also <strong>I'm an everyday Linux user</strong> (Kubuntu).",
+          "label": "Platforms"
+        },
+        "title": "Craftmanship / tech stack"
+      },
       "languages": {
         "en": {
-          "description": "proficient ; TOEIC: 905/990 + lived and worked in Australia",
+          "description": "Proficient ; TOEIC: 905/990 + lived and worked in Australia",
           "label": "English"
         },
         "fr": {
-          "description": "native speaker",
+          "description": "Native speaker",
           "label": "French"
         },
         "jp": {
-          "description": "basic ; 116 hours of professional Japanese lessons at Espace Lyon Japon",
+          "description": "Basic ; 116 hours of professional Japanese lessons at Espace Lyon Japon",
           "label": "Japanese"
         },
         "title": "Languages"

@@ -12,5 +12,8 @@ export default defineConfig({
     ],
     css: true,
     globals: true,
+    coverage: {
+      provider: 'v8',
+    },
   },
 });
