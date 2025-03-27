@@ -14,7 +14,9 @@ export default function ThemeSwitch() {
   const { setTheme, themes, theme } = useTheme();
   const ref = useRef(null);
   useEffect(() => setMounted(true), []);
-  useOnClickOutside(ref, () => setIsOpen(false));
+  useOnClickOutside(ref as unknown as React.RefObject<HTMLElement>, () =>
+    setIsOpen(false),
+  );
   if (!mounted)
     return (
       <Button
