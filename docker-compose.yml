@@ -1,0 +1,7 @@
+services:
+  resume-nextjs:
+    container_name: resume-nextjs
+    image: resume-nextjs
+    build: .
+    ports:
+      - '3000:3000'
