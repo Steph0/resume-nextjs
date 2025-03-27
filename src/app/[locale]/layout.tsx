@@ -17,8 +17,16 @@ const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
 });
 export const metadata: Metadata = {
-  title: 'Stephen M. resume',
-  description: 'Stephen M. resume - NextJs (React)',
+  title: "Hi! I'm Stephen",
+  description: 'Stephen Mehaut portfolio',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout(props: {

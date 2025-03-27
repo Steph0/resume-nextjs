@@ -1,5 +1,5 @@
-import { beforeAll, Mock, vi } from 'vitest';
 import { createTranslator, useTranslations } from 'next-intl';
+import { beforeAll, Mock, vi } from 'vitest';
 import messages from '@/messages/en.json';
 
 vi.mock('next-intl', async () => {

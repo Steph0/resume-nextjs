@@ -1,10 +1,11 @@
 'use client';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
-import GithubIcon from '../../../icons/github';
 import LangSwitcher from './LangSwitcher';
 import ThemeSwitch from './ThemeSwitch';
-import { HomeIcon } from '@/src/app/icons/home';
+import githubMark from '@/public/github-mark.svg';
+import { HomeIcon } from '@/src/app/[locale]/components/Header/icons/home';
 import { Link } from '@/src/i18n/routing';
 
 interface Props {
@@ -35,8 +36,8 @@ export const Header: FC<Props> = ({ locale }) => {
           title={t('githubPortfolio.label')}
           rel='noopener noreferrer'
         >
-          <div className='size-8'>
-            <GithubIcon />
+          <div className='relative size-8'>
+            <Image src={githubMark} alt={t('githubPortfolio.label')} fill />
           </div>
         </a>
       </div>

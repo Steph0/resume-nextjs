@@ -44,10 +44,9 @@ export default function DashboardPage(): ReactNode {
     <>
       <div className='flex flex-col' onWheel={onLoadMore}>
         <Presentation className='flex-auto' />
-        <Link href='#skills'>
+        <Link href='#skills' title={t('viewMoreAlt')}>
           <div className='relative left-1/2 mt-8 h-12 w-12 pb-4 sm:h-15 sm:w-15 dark:invert'>
             <Image
-              title={t('viewMoreAlt')}
               src={arrowDown}
               alt={t('viewMoreAlt')}
               sizes='10w'
