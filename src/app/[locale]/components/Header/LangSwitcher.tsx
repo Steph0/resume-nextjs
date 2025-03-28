@@ -34,7 +34,7 @@ const LangSwitcher: React.FC = () => {
           <FiGlobe />
         </Button>
         {isOptionsExpanded && (
-          <div className='absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>
+          <div className='absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>
             <div
               className='py-1'
               role='menu'
