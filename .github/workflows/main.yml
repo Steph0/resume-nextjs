@@ -1,55 +1,40 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Resume NextJs CI
 
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
-  push:
-    branches: main
+    push:
+        branches: main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout
-      - uses: actions/checkout@v4
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout
+            -   uses: actions/checkout@v4
 
-      # Run tests
-      - name: Get project's node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
-        id: nvm
+            # Run tests
+            -   name: Get project's node version
+                run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+                id: nvm
 
-      - name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
-          cache: 'npm'
+            -   name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
+                uses: actions/setup-node@v4
+                with:
+                    node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+                    cache: 'npm'
 
-      - run: npm ci
-      - run: npm test
+            -   run: npm ci
+            -   run: npm test
 
-      # Deploy to GCP
-      - name: Google Cloud Auth
-        uses: 'google-github-actions/auth@v2'
-        with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+            # Deploy to Vercel
+            -   name: Install Vercel CLI
+                run: npm install --global vercel@latest
+    
+            -   name: Build Project Artifacts
+                run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
 
-      - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v2'
-
-      - name: Configure Docker
-        run: gcloud auth configure-docker gcr.io
-
-      - name: Build and Push Docker Image
-        run: |
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest .
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
-
-      - name: Deploy to Cloud Run
-        run: |
-          gcloud run deploy ${{ secrets.SERVICE_NAME }} \
-              --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest \
-              --platform managed \
-              --region ${{ secrets.GCP_REGION }} \
-              --allow-unauthenticated
+            -   name: Deploy Project Artifacts to Vercel
+                run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes

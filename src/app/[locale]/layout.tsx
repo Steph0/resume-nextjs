@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import {
@@ -73,6 +74,7 @@ export default function RootLayout(props: {
             <main className='h-full flex-auto px-5'>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
