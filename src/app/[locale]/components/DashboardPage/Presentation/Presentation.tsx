@@ -17,14 +17,14 @@ export default function Presentation({
   const t = useTranslations('Dashboard.Presentation');
   return (
     <section className={className}>
-      <h1 className='text-center text-4xl leading-tight font-extrabold sm:text-6xl md:py-24'>
+      <h1 className='text-center text-4xl font-extrabold leading-tight sm:text-6xl md:py-24'>
         <span className='bg-span-bg bg-clip-text text-transparent'>
           {t('title')}
         </span>
       </h1>
       <div className='md:flex md:flex-auto md:flex-row md:justify-evenly'>
         <div className='my-4 shadow-xl md:m-0 md:flex md:w-2/6 md:flex-row'>
-          <div className='relative min-h-56 sm:m-auto sm:max-w-1/2 md:m-0 md:w-1/3'>
+          <div className='sm:max-w-1/2 relative min-h-56 sm:m-auto md:m-0 md:w-1/3'>
             <Image
               src={photo}
               alt={t('photoAlt')}

@@ -5,36 +5,63 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
-    push:
-        branches: main
+  push:
+    branches: main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            # Checkout
-            -   uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - uses: actions/checkout@v4
 
-            # Run tests
-            -   name: Get project's node version
-                run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
-                id: nvm
+      # Run tests
+      - name: Get project's node version
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+        id: nvm
 
-            -   name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-                uses: actions/setup-node@v4
-                with:
-                    node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
-                    cache: 'npm'
+      - name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+          cache: 'npm'
 
-            -   run: npm ci
-            -   run: npm test
+      - run: npm ci
+      - run: npm test
 
-            # Deploy to Vercel
-            -   name: Install Vercel CLI
-                run: npm install --global vercel@latest
-    
-            -   name: Build Project Artifacts
-                run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+      # Deploy to Vercel (production)
+      - name: Install Vercel CLI (production)
+        if: ${{ !env.ACT }}
+        run: npm install --global vercel@latest
 
-            -   name: Deploy Project Artifacts to Vercel
-                run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes
+      - name: Pull Vercel Environment Information (production)
+        if: ${{ !env.ACT }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts (production)
+        if: ${{ !env.ACT }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+
+      - name: Deploy Project Artifacts to Vercel (production)
+        if: ${{ !env.ACT }}
+        run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes
+
+      ############################################
+      # It detects if you are running act locally
+      # Deploy to Vercel as a preview only
+      ############################################
+      - name: Install Vercel CLI (preview mode)
+        if: ${{ env.ACT }}
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel Environment Information (preview mode)
+        if: ${{ env.ACT }}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts (preview mode)
+        if: ${{ env.ACT }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }} --yes
+
+      - name: Deploy Project Artifacts to Vercel (preview mode)
+        if: ${{ env.ACT }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes

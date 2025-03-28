@@ -10,7 +10,7 @@ export default function Skills(): ReactNode {
 
   return (
     <section id='skills' className='pb-5 sm:px-5'>
-      <h1 className='pt-5 text-4xl leading-tight font-extrabold'>
+      <h1 className='pt-5 text-4xl font-extrabold leading-tight'>
         {t('title')}
       </h1>
       <article>

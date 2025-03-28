@@ -48,7 +48,7 @@ export default function RootLayout(props: {
       className={cn(notoSansJP.variable, 'font-sans', 'h-full scroll-smooth')}
       suppressHydrationWarning
     >
-      <body className='bg-background text-primary m-auto flex h-full w-full max-w-(--breakpoint-2xl) flex-col overflow-auto'>
+      <body className='max-w-(--breakpoint-2xl) m-auto flex h-full w-full flex-col overflow-auto bg-background text-primary'>
         <ThemeProvider
           enableSystem
           attribute='class'

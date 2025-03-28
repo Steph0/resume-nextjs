@@ -34,7 +34,7 @@ const LangSwitcher: React.FC = () => {
           <FiGlobe />
         </Button>
         {isOptionsExpanded && (
-          <div className='bg-dropdown absolute right-0 mt-2 w-full origin-top-right rounded-md shadow-lg'>
+          <div className='absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>
             <div
               className='py-1'
               role='menu'
@@ -52,7 +52,7 @@ const LangSwitcher: React.FC = () => {
                       onMouseDown={(e) => {
                         e.preventDefault();
                       }}
-                      className={`hover:bg-dropdownHover block w-full px-4 py-2 text-left text-sm ${
+                      className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
                         pathname === `/${lang.code}`
                           ? 'bg-selected text-primary hover:bg-selected'
                           : 'text-secondary'

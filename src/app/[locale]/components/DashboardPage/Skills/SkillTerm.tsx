@@ -6,7 +6,7 @@ interface SkillTermProps {
 
 export const SkillTerm: FC<SkillTermProps> = ({ text }) => {
   return (
-    <dt className='bg-background-secondary dark:shadow-primary z-1 h-fit p-4 text-center shadow-lg'>
+    <dt className='z-10 h-fit bg-background-secondary p-4 text-center shadow-lg dark:shadow-primary'>
       {text}
     </dt>
   );

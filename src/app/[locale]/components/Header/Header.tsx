@@ -14,8 +14,8 @@ interface Props {
 export const Header: FC<Props> = ({ locale }) => {
   const t = useTranslations('Header');
   return (
-    <div className='flex w-full max-w-(--breakpoint-2xl) flex-row items-center justify-between p-5 print:hidden'>
-      <nav className='text-button mr-10 inline-flex gap-5'>
+    <div className='flex w-full max-w-screen-2xl flex-row items-center justify-between p-5 print:hidden'>
+      <nav className='mr-10 inline-flex gap-5 text-button'>
         <Link
           lang={locale}
           href={`/`}

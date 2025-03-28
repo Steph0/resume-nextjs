@@ -1,6 +1,7 @@
 {
   "ignoreDependencies": [
     "@eslint/eslintrc",
+    "@tailwindcss/postcss",
     "postcss-load-config",
     "eslint-config-next",
     "eslint-import-resolver-typescript"
