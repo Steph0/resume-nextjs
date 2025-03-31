@@ -2,8 +2,9 @@
 
 ## Description
 
-Resume built with Next.js 15+ (React).
-Tested with Testing Library.
+Hosted on Vercel, check it out: <https://stephenmehaut.vercel.app/>
+
+Resume built with Next.js 15+ (React). Tested with Testing Library.
 I tried using TailwindCSS to discover it.
 
 ## Development
@@ -13,7 +14,7 @@ By default app will be available at <http://localhost:3000/>
 ### With Docker
 
 ```sh
-docker compose up -d
+ docker compose up --force-recreate --build -d
 ```
 
 ### With node and npm

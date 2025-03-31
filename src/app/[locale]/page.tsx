@@ -42,7 +42,11 @@ export default function DashboardPage(): ReactNode {
 
   return (
     <>
-      <div className='flex flex-col' onWheel={onLoadMore}>
+      <div
+        className='flex flex-col'
+        onWheel={onLoadMore}
+        onTouchMove={onLoadMore}
+      >
         <Presentation className='flex-auto' />
         <Link href='#skills' title={t('viewMoreAlt')}>
           <div className='sm:h-15 sm:w-15 relative left-1/2 mt-8 h-14 w-14 pb-4 dark:invert'>
