@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import {
@@ -75,6 +76,7 @@ export default function RootLayout(props: {
           </NextIntlClientProvider>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
