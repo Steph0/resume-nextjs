@@ -41,19 +41,34 @@ describe('Presentation', () => {
     expect(text).toHaveTextContent('Passionate about my job');
   });
 
-  test('it should contain an about this site card', async () => {
-    // when
-    renderI18n(<DashboardPage />);
+  describe('About this website card', async () => {
+    test('it should contain an about this site card', async () => {
+      // when
+      renderI18n(<DashboardPage />);
 
-    // then
-    const cards = screen.getAllByRole('article');
-    const title = within(cards[1]).getByRole('heading', {
-      level: 2,
-      name: 'A playground...',
+      // then
+      const cards = screen.getAllByRole('article');
+      const title = within(cards[1]).getByRole('heading', {
+        level: 2,
+        name: 'A playground...',
+      });
+      expect(title).toBeInTheDocument();
+
+      const text = within(cards[1]).getByRole('paragraph');
+      expect(text).toHaveTextContent('Responsive i18n website');
     });
-    expect(title).toBeInTheDocument();
 
-    const text = within(cards[1]).getByRole('paragraph');
-    expect(text).toHaveTextContent('Responsive i18n website');
+    test('it should a link to my Github profile', async () => {
+      // when
+      renderI18n(<DashboardPage />);
+
+      // then
+      const cards = screen.getAllByRole('article');
+      const text = within(cards[1]).getByRole('paragraph');
+      const githubLink = within(text).getByRole('link', {
+        name: 'Sources on my Github profile',
+      });
+      expect(githubLink).toBeInTheDocument();
+    });
   });
 });

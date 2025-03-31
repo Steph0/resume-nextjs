@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import LangSwitcher from './LangSwitcher';
 import ThemeSwitch from './ThemeSwitch';
-import githubMark from '@/public/github-mark.svg';
+import linkedinMark from '@/public/linkedin-mark.svg';
 import { HomeIcon } from '@/src/app/[locale]/components/Header/icons/home';
 import { Link } from '@/src/i18n/routing';
 
@@ -29,17 +29,18 @@ export const Header: FC<Props> = ({ locale }) => {
       <div className='flex flex-row items-center gap-3'>
         <ThemeSwitch />
         <LangSwitcher />
-        <a
-          href={t('githubPortfolio.href')}
-          target='_blank'
-          aria-label={t('githubPortfolio.label')}
-          title={t('githubPortfolio.label')}
-          rel='noopener noreferrer'
-        >
-          <div className='relative size-8'>
-            <Image src={githubMark} alt={t('githubPortfolio.label')} fill />
-          </div>
-        </a>
+        <p className='relative size-8'>
+          <a
+            href={t('linkedinProfile.href')}
+            target='_blank'
+            aria-label={t('linkedinProfile.label')}
+            title={t('linkedinProfile.label')}
+            rel='noopener noreferrer'
+            className='absolute size-8'
+          >
+            <Image src={linkedinMark} alt={t('linkedinProfile.label')} fill />
+          </a>
+        </p>
       </div>
     </div>
   );

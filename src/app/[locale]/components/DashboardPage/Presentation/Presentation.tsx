@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import { Card } from './Card';
 import { CardText } from './CardText';
 import { CardTitle } from './CardTitle';
+import githubMark from '@/public/github-mark.svg';
 import photo from '@/public/img-profile.jpg';
 
 interface PresentationProps {
@@ -56,6 +57,36 @@ export default function Presentation({
           <CardText
             text={t.rich('aboutThisWebsiteText', {
               br: () => <br />,
+              nextJs: (chunks) => (
+                <a
+                  href='https://nextjs.org/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {chunks}
+                </a>
+              ),
+              testingLibrary: (chunks) => (
+                <a
+                  href='https://testing-library.com/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {chunks}
+                </a>
+              ),
+              githubPortfolio: (chunks) => (
+                <a
+                  href={t('githubPortfolio.href')}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <span className='relative mr-1 inline-block size-4 align-middle dark:invert'>
+                    <Image src={githubMark} alt={''} fill />
+                  </span>
+                  {chunks}
+                </a>
+              ),
             })}
           />
         </Card>

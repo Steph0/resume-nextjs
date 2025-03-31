@@ -44,7 +44,7 @@ describe('Header', () => {
     expect(button).toBeInTheDocument();
   });
 
-  test('it should contain a Github portfolio link', async () => {
+  test('it should contain a linkedin link', async () => {
     // given
     const locale = 'en';
 
@@ -53,7 +53,7 @@ describe('Header', () => {
 
     // then
     const link = screen.getByRole('link', {
-      name: 'See my Github portfolio',
+      name: 'My linkedin profile',
     });
     expect(link).toBeInTheDocument();
   });

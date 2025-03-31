@@ -25,11 +25,30 @@ describe('DashboardPage', () => {
     expect(arrowDown).toBeInTheDocument();
   });
 
-  describe('when user clicks to view more', () => {
+  describe('when user clicks to view more arrow down', () => {
     test('it should load the skills', async () => {
       // when
       renderI18n(<DashboardPage />);
       fireEvent.click(screen.getByAltText('View more'));
+
+      // then
+      const skillSection = await screen.findByRole('heading', {
+        level: 1,
+        name: 'Skills',
+      });
+      expect(skillSection).toBeInTheDocument();
+    });
+  });
+
+  describe('when user clicks the presentation link to load  the skills section', () => {
+    test('it should load the skills', async () => {
+      // when
+      renderI18n(<DashboardPage />);
+      fireEvent.click(
+        screen.getByRole('link', {
+          name: 'Read more about me',
+        }),
+      );
 
       // then
       const skillSection = await screen.findByRole('heading', {

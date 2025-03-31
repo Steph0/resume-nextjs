@@ -1,8 +1,12 @@
 {
   "Dashboard": {
     "Presentation": {
-      "aboutThisWebsiteText": "Responsive i18n website crafted using Next.js.<br></br>Tested with Testing Library.<br></br>I also tried TailwindCSS for fun.<br></br>Hosted on Google Cloud Platform.",
+      "aboutThisWebsiteText": "Responsive i18n website crafted using <nextJs>Next.js</nextJs>, tested with <testingLibrary>Testing Library</testingLibrary> and Vitest.<br></br>I tried TailwindCSS to form an opinion about it.<br></br><br></br><githubPortfolio>Sources on my Github profile</githubPortfolio>",
       "aboutThisWebsiteTitle": "A playground...",
+      "githubPortfolio": {
+        "href": "https://github.com/Steph0/",
+        "label": "See my Github portfolio"
+      },
       "photoAlt": "Photo of the author",
       "profileText": "Passionate about my job, I strongly believe that clean code makes great and durable projects.<br></br><br></br><readmore>Read more about me</readmore>",
       "profileTitle": "Senior Software Developer",
@@ -11,7 +15,7 @@
     "Skills": {
       "craftmanship": {
         "backend": {
-          "description": "I have extended experience in <strong>Java</strong> (especially the Spring stack) and <strong>NodeJs</strong> and common associated components/practices (message brokers, cache mechanisms, transaction management, etc.).<br></br>I love crafting a great backend architecture by finding the right software design and tools depending on the project.",
+          "description": "I have a solid background in <strong>Java</strong> (especially the Spring stack) and <strong>NodeJs</strong> and common associated components/practices (message brokers, cache mechanisms, transaction management, etc.).<br></br>I love crafting a great backend architecture by finding the right software design and tools depending on the project.",
           "label": "Backend"
         },
         "craftmanship": {
@@ -56,10 +60,10 @@
     "ThemeSwitch": {
       "label": "Theme"
     },
-    "githubPortfolio": {
-      "href": "https://github.com/Steph0/",
-      "label": "See my Github portfolio"
-    },
-    "home": "Back to homepage"
+    "home": "Back to homepage",
+    "linkedinProfile": {
+      "href": "https://www.linkedin.com/in/stephen-mehaut/",
+      "label": "My linkedin profile"
+    }
   }
 }
