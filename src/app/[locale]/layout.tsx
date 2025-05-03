@@ -21,6 +21,9 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "Hi! I'm Stephen",
   description: 'Stephen Mehaut portfolio',
+  verification: {
+    google: `${process.env.GOOGLE_SITE_VERIFICATION}`,
+  },
   robots: {
     index: true,
     follow: true,
