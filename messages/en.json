@@ -15,11 +15,11 @@
     "Skills": {
       "craftmanship": {
         "backend": {
-          "description": "I have a solid background in <strong>Java</strong> (especially the Spring stack) and <strong>NodeJs</strong> and common associated components/practices (message brokers, cache mechanisms, transaction management, etc.).<br></br>I love crafting a great backend architecture by finding the right software design and tools depending on the project.",
+          "description": "I have a solid background in <strong>Java</strong> (especially the Spring stack) and <strong>Node.js</strong> and common associated components/practices (message brokers, cache mechanisms, transaction management, etc.).<br></br>I love crafting a great backend architecture by finding the right software design and tools depending on the project.",
           "label": "Backend"
         },
         "craftmanship": {
-          "description": "Crafting a software is also about the Developer Experience and having tailored made.<br></br>Recently I'm deeply aligned with the ideas from <accelerate>Accelerate</accelerate> and <productmode>Product-mode</productmode> approaches.<br></br>This includes so many concepts and practices like <strong>pair/mob programming, TDD, Clean Architecture</strong>, up to more advanced ones like <strong>Design Driven Development or Continuous Delivery</strong>...",
+          "description": "Crafting a software is also about crafting the Developer Experience to reach a Product's goals faster.<br></br>Recently I'm deeply aligned with the ideas from <accelerate>Accelerate</accelerate> and <productmode>Product-mode</productmode> approaches.<br></br>This includes so many concepts and practices like <strong>pair/mob programming, TDD, Clean Architecture</strong>, up to more advanced ones like <strong>Design Driven Development or Continuous Delivery</strong>...",
           "label": "Craftmanship"
         },
         "databases": {
@@ -27,7 +27,7 @@
           "label": "Databases"
         },
         "frontend": {
-          "description": "Through the years I mainly used <strong>React, Angular and Ember</strong> (using Typescript or not).<br></br>Accessibility (a11y), responsive design are practices that I find very important.<br></br>I'm used to working with CSS modules, CSS pre-processors, and design systems, however designing the UX/UI is not always my area of expertise.",
+          "description": "Through the years I mainly used <strong>React, Angular and Ember</strong> (using Typescript or not).<br></br>Accessibility (a11y), responsive design are practices that I find very important.<br></br>I'm used to working with CSS modules, CSS pre-processors, and design systems.",
           "label": "Frontend"
         },
         "platforms": {

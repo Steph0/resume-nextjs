@@ -26,6 +26,21 @@ npm ci
 npm run dev
 ```
 
+## Deployment
+
+### Production
+
+Automatic Continuous Delivery to production is done with Github Actions.
+
+### Preview (staging)
+
+Using a local [act](https://github.com/nektos/act) installation, you can trigger the Github Actions workflows and deploy on a Vercel preview environment.
+Note that it requires a local `.secrets` file with valid credentials.
+
+```sh
+./bin/act -W '.github/workflows/main.yml'
+```
+
 ## Third Parties I like and recommend
 
 - Reactjs: <https://react.dev/>
