@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  turbopack: {},
   output: 'standalone',
   eslint: {
     dirs: ['lib', 'messages', 'src', '__tests__'],
