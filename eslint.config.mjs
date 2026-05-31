@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import tsParser from '@typescript-eslint/parser';
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
-import eslintPluginImportX from 'eslint-plugin-import-x';
+import { flatConfigs as importXFlatConfigs } from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import testingLibrary from 'eslint-plugin-testing-library';
 
@@ -26,15 +26,10 @@ const eslintConfig = [
       },
     },
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:testing-library/react',
-    'prettier',
-  ),
+  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
   eslintPluginPrettierRecommended,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
+  importXFlatConfigs.recommended,
+  importXFlatConfigs.typescript,
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
     languageOptions: {
