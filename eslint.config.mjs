@@ -2,6 +2,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import tsParser from '@typescript-eslint/parser';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
 import { flatConfigs as importXFlatConfigs } from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -16,6 +17,17 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      '.gemini/**',
+      'coverage/**',
+      'dist/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
+  },
+  {
     languageOptions: {
       ecmaVersion: 12,
       sourceType: 'module',
@@ -26,7 +38,8 @@ const eslintConfig = [
       },
     },
   },
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+  ...nextCoreWebVitals,
+  ...compat.extends('prettier'),
   eslintPluginPrettierRecommended,
   importXFlatConfigs.recommended,
   importXFlatConfigs.typescript,

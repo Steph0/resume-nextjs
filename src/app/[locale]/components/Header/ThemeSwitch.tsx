@@ -13,6 +13,7 @@ export default function ThemeSwitch() {
   const [isOpen, setIsOpen] = useState(false); // New state to control dropdown visibility
   const { setTheme, themes, theme } = useTheme();
   const ref = useRef(null);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
   useOnClickOutside(ref as unknown as React.RefObject<HTMLElement>, () =>
     setIsOpen(false),

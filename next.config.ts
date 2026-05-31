@@ -6,9 +6,6 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   turbopack: {},
   output: 'standalone',
-  eslint: {
-    dirs: ['lib', 'messages', 'src', '__tests__'],
-  },
 };
 
 export default withNextIntl(nextConfig);

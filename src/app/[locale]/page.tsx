@@ -9,6 +9,26 @@ import { ReactNode, useEffect, useState } from 'react';
 import Presentation from './components/DashboardPage/Presentation/Presentation';
 import arrowDown from '@/public/arrow-down.svg';
 
+const LoadingComponent = () => {
+  const t = useTranslations('Dashboard');
+  return <p className='m-auto my-4 text-center font-bold'>{t('loading')}</p>;
+};
+
+const DynamicSkills = dynamic(
+  () =>
+    import('./components/DashboardPage/Skills/Skills').then((mod) => {
+      setTimeout(() => {
+        const element = document.getElementById('skills');
+        element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+
+      return mod.default;
+    }),
+  {
+    loading: () => <LoadingComponent />,
+  },
+);
+
 export default function DashboardPage(): ReactNode {
   const [loadMore, setLoadMore] = useState(false);
   const onLoadMore = (): void => setLoadMore(true);
@@ -17,28 +37,12 @@ export default function DashboardPage(): ReactNode {
 
   useEffect(() => {
     if (window?.location?.hash === '#skills') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoadMore(true);
     }
   }, [params]);
 
   const t = useTranslations('Dashboard');
-
-  const DynamicSkills = dynamic(
-    () =>
-      import('./components/DashboardPage/Skills/Skills').then((mod) => {
-        setTimeout(() => {
-          const element = document.getElementById('skills');
-          element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 500);
-
-        return mod.default;
-      }),
-    {
-      loading: () => (
-        <p className='m-auto my-4 text-center font-bold'>{t('loading')}</p>
-      ),
-    },
-  );
 
   return (
     <>
