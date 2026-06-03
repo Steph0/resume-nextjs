@@ -9,29 +9,12 @@ import { capitalize } from '@/src/app/lib/utils';
 
 export default function ThemeSwitch() {
   const t = useTranslations('Header.ThemeSwitch');
-  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // New state to control dropdown visibility
   const { setTheme, themes, theme } = useTheme();
   const ref = useRef(null);
-  // eslint-disable-next-line react-hooks/set-state-in-effect
-  useEffect(() => setMounted(true), []);
   useOnClickOutside(ref as unknown as React.RefObject<HTMLElement>, () =>
     setIsOpen(false),
   );
-  if (!mounted)
-    return (
-      <Button
-        size='small'
-        type='button'
-        className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3'
-        id='options-menu'
-        aria-expanded={isOpen}
-        onClick={() => {}}
-      >
-        <span className='ml-2'>{t('label')}</span>
-        <FiSun />
-      </Button>
-    );
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
