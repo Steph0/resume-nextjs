@@ -2,8 +2,9 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import tsParser from '@typescript-eslint/parser';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
-import eslintPluginImportX from 'eslint-plugin-import-x';
+import { flatConfigs as importXFlatConfigs } from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import testingLibrary from 'eslint-plugin-testing-library';
 
@@ -16,6 +17,17 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      '.gemini/**',
+      'coverage/**',
+      'dist/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
+  },
+  {
     languageOptions: {
       ecmaVersion: 12,
       sourceType: 'module',
@@ -26,15 +38,11 @@ const eslintConfig = [
       },
     },
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:testing-library/react',
-    'prettier',
-  ),
+  ...nextCoreWebVitals,
+  ...compat.extends('prettier'),
   eslintPluginPrettierRecommended,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
+  importXFlatConfigs.recommended,
+  importXFlatConfigs.typescript,
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
     languageOptions: {
