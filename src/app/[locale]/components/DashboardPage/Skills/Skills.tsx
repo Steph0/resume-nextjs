@@ -21,10 +21,20 @@ export default function Skills(): ReactNode {
           <SkillDescription text={t('languages.fr.description')} />
 
           <SkillTerm text={t('languages.en.label')} />
-          <SkillDescription text={t('languages.en.description')} />
+          <SkillDescription
+            text={t.rich('languages.en.description', {
+              br: () => <br />,
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          />
 
           <SkillTerm text={t('languages.jp.label')} />
-          <SkillDescription text={t('languages.jp.description')} />
+          <SkillDescription
+            text={t.rich('languages.jp.description', {
+              br: () => <br />,
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          />
         </SkillList>
       </article>
 

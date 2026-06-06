@@ -38,7 +38,7 @@
       },
       "languages": {
         "en": {
-          "description": "英語が堪能です。オーストラリアに1年間住み、働いていました。TOEIC点950/990オーストラリアに1年間住み、働いていました。",
+          "description": "TOEIC 970/990 (2025)。C1レベルの英語認定。<br></br><strong>オーストラリアでの就労経験。</strong>英語が堪能です。",
           "label": "英語"
         },
         "fr": {
@@ -46,7 +46,7 @@
           "label": "フランス語"
         },
         "jp": {
-          "description": "エスパス・リオン・ジャポンで116時間のプロの日本語レッスンを受けました。",
+          "description": "<strong>大阪に住んでいます。</strong><br></br>JLPT N5 (2025)",
           "label": "日本語"
         },
         "title": "言語"
