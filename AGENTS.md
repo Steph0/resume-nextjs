@@ -25,9 +25,8 @@ Before any Next.js work, find and read the relevant doc in `node_modules/next/di
 - Implement parallel changes with sub-agents
 - Act as coordinator only
 - Use best model: premium for complex tasks, mid-tier for simple tasks, docs or lookups
-- Grep before read
 - Never read entire dirs. Use find/grep first
-- Tool call cap: stop + explain after 10 tools no progress
+- Tool call cap: stop + explain after 5 tools with no progress
 - Run `npm run sanity-checks` after features
 
 ## TESTING
@@ -38,5 +37,4 @@ Before any Next.js work, find and read the relevant doc in `node_modules/next/di
 
 ## UI DESIGN
 
-- Follow UI design system
-- Design System: @DESIGN.md
+- Strictly follow UI design system: see DESIGN.md file
