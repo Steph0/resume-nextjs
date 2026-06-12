@@ -58,7 +58,7 @@ export default function DashboardPage(): ReactNode {
           </div>
         </Link>
       </div>
-      {loadMore && <Skills />}
+      <Skills className={loadMore ? 'animate-fade-in' : 'hidden'} />
     </>
   );
 }

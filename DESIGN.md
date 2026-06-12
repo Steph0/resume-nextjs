@@ -100,3 +100,4 @@ The application relies on semantic color tokens defined as CSS variables.
 
 - Don't use hardcoded color values in component files. Always use the mapped Tailwind variables (e.g., `text-primary`, `bg-background`).
 - Don't mix different font families without a structural reason.
+- Don't use `animate-in`, `fade-in`, `slide-in-from-*` or similar — these are **not** native Tailwind v3 utilities. Use core classes: `transition-opacity`, `opacity-0/100`, `transition-transform`, `translate-y-*`, `duration-*`, or define custom `@keyframes` in `globals.css`.

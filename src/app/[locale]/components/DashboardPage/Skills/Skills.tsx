@@ -4,12 +4,17 @@ import { SkillDescription } from './SkillDescription';
 import { SkillList } from './SkillList';
 import { SkillTerm } from './SkillTerm';
 import { SkillTitle } from './SkillTitle';
+import { cn } from '@/src/app/lib/utils';
 
-export default function Skills(): ReactNode {
+interface SkillsProps {
+  className?: string;
+}
+
+export default function Skills({ className }: SkillsProps): ReactNode {
   const t = useTranslations('Dashboard.Skills');
 
   return (
-    <section id='skills' className='pb-5 sm:px-5'>
+    <section id='skills' className={cn('pb-5 sm:px-5', className)}>
       <h1 className='pt-5 text-4xl font-extrabold leading-tight'>
         {t('title')}
       </h1>

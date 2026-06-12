@@ -4,16 +4,31 @@ import { renderI18n } from '@/__tests__/helpers/testing-library-helpers';
 import DashboardPage from '@/src/app/[locale]/page';
 
 describe('DashboardPage', () => {
-  test('it should only display the presentation at startup', async () => {
+  test('it should show the presentation at startup', async () => {
     // when
-    renderI18n(<DashboardPage />);
+    const { container } = renderI18n(<DashboardPage />);
 
     // then
-    const titles = screen.getAllByRole('heading', {
+    const presentationTitle = screen.getByRole('heading', {
       level: 1,
+      name: "Hi! I'm Stephen",
     });
-    expect(titles).toHaveLength(1);
-    expect(titles[0]).toHaveAccessibleName("Hi! I'm Stephen");
+    expect(presentationTitle).toBeInTheDocument();
+    expect(presentationTitle).toBeVisible();
+  });
+
+  test('it should not show the skills at startup even if present in DOM', async () => {
+    // when
+    const { container } = renderI18n(<DashboardPage />);
+
+    // then
+    const skillSection = screen.getByRole('heading', {
+      level: 1,
+      name: 'Skills',
+      hidden: true,
+    });
+    expect(skillSection).toBeInTheDocument();
+    expect(skillSection).not.toBeVisible();
   });
 
   test('it should contain an arrow image to view more', async () => {
@@ -26,7 +41,7 @@ describe('DashboardPage', () => {
   });
 
   describe('when user clicks to view more arrow down', () => {
-    test('it should load the skills', async () => {
+    test('it should show the skills', async () => {
       // when
       renderI18n(<DashboardPage />);
       fireEvent.click(screen.getByAltText('View more'));
@@ -41,7 +56,7 @@ describe('DashboardPage', () => {
   });
 
   describe('when user clicks the presentation link to load  the skills section', () => {
-    test('it should load the skills', async () => {
+    test('it should show the skills', async () => {
       // when
       renderI18n(<DashboardPage />);
       fireEvent.click(
