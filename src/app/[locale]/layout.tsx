@@ -50,6 +50,7 @@ export default function RootLayout(props: {
       lang={locale}
       dir={'ltr'}
       className={cn(notoSansJP.variable, 'font-sans', 'h-full scroll-smooth')}
+      data-scroll-behavior='smooth'
       suppressHydrationWarning
     >
       <body className='max-w-(--breakpoint-2xl) m-auto flex h-full w-full flex-col overflow-auto bg-background text-primary'>
