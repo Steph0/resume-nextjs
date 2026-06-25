@@ -58,7 +58,7 @@ describe('Presentation', () => {
       expect(text).toHaveTextContent('Responsive i18n website');
     });
 
-    test('it should a link to my Github profile', async () => {
+    test('it should contain a link to my Github profile', async () => {
       // when
       renderI18n(<DashboardPage />);
 

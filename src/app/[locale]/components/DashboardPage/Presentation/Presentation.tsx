@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { ReactNode } from 'react';
 import { Card } from './Card';
@@ -7,13 +6,16 @@ import { CardText } from './CardText';
 import { CardTitle } from './CardTitle';
 import githubMark from '@/public/github-mark.svg';
 import photo from '@/public/img-profile.jpg';
+import { Link } from '@/src/i18n/routing';
 
 interface PresentationProps {
   className?: string;
+  onLoadMore?: () => void;
 }
 
 export default function Presentation({
   className,
+  onLoadMore,
 }: PresentationProps): ReactNode {
   const t = useTranslations('Dashboard.Presentation');
   return (
@@ -42,7 +44,13 @@ export default function Presentation({
             <CardText
               text={t.rich('profileText', {
                 readmore: (chunks) => (
-                  <Link passHref replace={true} scroll={true} href='#skills'>
+                  <Link
+                    passHref
+                    replace={true}
+                    scroll={false}
+                    href='/skills'
+                    onClick={onLoadMore}
+                  >
                     {chunks}
                   </Link>
                 ),
