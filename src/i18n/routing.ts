@@ -10,4 +10,4 @@ export const routing = defineRouting({
   localeDetection: true,
 });
 
-export const { Link, usePathname } = createNavigation(routing);
+export const { Link, usePathname, useRouter } = createNavigation(routing);

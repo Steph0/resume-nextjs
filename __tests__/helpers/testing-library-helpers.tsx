@@ -1,17 +1,22 @@
 import { render } from '@testing-library/react';
-import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 import { ReactNode } from 'react';
-import messages from '@/messages/en.json';
+import {
+  AppRouterContextProviderMock,
+  AppRouterContextProviderMockProps,
+} from './app-router-context-provider-mock';
+import { IntlProviderMock } from './intl-provider-mock';
 
-export const renderI18n = (children: ReactNode) => {
-  const locale = 'en';
-
-  return render(
-    <NextIntlClientProvider
-      locale={locale}
-      messages={messages as AbstractIntlMessages}
-    >
-      {children}
-    </NextIntlClientProvider>,
-  );
+type RenderI18nOptions = {
+  router?: AppRouterContextProviderMockProps['router'];
+  pathname?: string;
 };
+
+export const renderI18n = (children: ReactNode, options?: RenderI18nOptions) =>
+  render(
+    <AppRouterContextProviderMock
+      router={options?.router}
+      pathname={options?.pathname}
+    >
+      <IntlProviderMock>{children}</IntlProviderMock>
+    </AppRouterContextProviderMock>,
+  );

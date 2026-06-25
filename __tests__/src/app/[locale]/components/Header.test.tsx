@@ -44,7 +44,7 @@ describe('Header', () => {
     expect(button).toBeInTheDocument();
   });
 
-  test('it should contain a linkedin link', async () => {
+  test('it should contain a LinkedIn link', async () => {
     // given
     const locale = 'en';
 
